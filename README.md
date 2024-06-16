@@ -2,15 +2,15 @@
 # Дипломный проект по профессии «Инженер по тестированию»: тестирование мобильного приложения «Мобильный хоспис»
 
 - [Задание](https://github.com/netology-code/qamid-diplom)
-- [План тестирования]()
-- [Отчет о тестировании]()
-- [Результаты тестирования]()
-- [Отчеты о выявленных ошибках]()
+- [План тестирования](https://github.com/Isbocha/QAMID_DIPLOM/blob/main/docs/Plan.md)
+- [Отчет о тестировании](https://github.com/Isbocha/QAMID_DIPLOM/blob/main/docs/Result.md)
+- [Результаты тестирования](https://github.com/Isbocha/QAMID_DIPLOM/blob/main/docs/allure-results.zip)
+- [Отчеты о выявленных ошибках](https://github.com/Isbocha/QAMID_DIPLOM/issues)
 
 
 
 ## Установка и запуск авто-тестов
-1. Склонировать [репозиторий]()
+1. Склонировать [репозиторий](https://github.com/Isbocha/QAMID_DIPLOM)
 2. Открыть проект в Android Studio
 3. Установить эмулятор Android API 29 или подключить мобильный телефон Android API 29
 4. Установить на эмуляторе или мобильном телефоне в системных настройках английский язык основным
