@@ -34,13 +34,11 @@ public class AuthorizationPage {
     private final ViewInteraction passwordField = onView(withHint("Password"));
     private final ViewInteraction button = onView(withId(R.id.enter_button));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.enter_button, 5000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         title.check(matches(isDisplayed()));
@@ -50,7 +48,6 @@ public class AuthorizationPage {
         button.check(matches(ViewMatchers.withText("SIGN IN")));
     }
 
-    //    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         loginField.check(matches(isClickable()));
@@ -58,31 +55,26 @@ public class AuthorizationPage {
         button.check(matches(isClickable()));
     }
 
-    //    @Step("Ввод логина")
     public void addLogin(String login) {
         Allure.step("Ввод логина");
         loginField.perform(replaceText(login), closeSoftKeyboard());
     }
 
-    //    @Step("Удаление логина")
     public void deleteLogin() {
         Allure.step("Удаление логина");
         loginField.perform(clearText(), closeSoftKeyboard());
     }
 
-    //    @Step("Ввод пароля")
     public void addPassword(String password) {
         Allure.step("Ввод пароля");
         passwordField.perform(replaceText(password), closeSoftKeyboard());
     }
 
-    //    @Step("Удаление пароля")
     public void deletePassword() {
         Allure.step("Удаление пароля");
         passwordField.perform(clearText(), closeSoftKeyboard());
     }
 
-    //    @Step("Авторизация пользователя")
     public void authUser() {
         Allure.step("Авторизация пользователя");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.login_text_input_layout, 5000));
@@ -91,13 +83,11 @@ public class AuthorizationPage {
         clickButton();
     }
 
-    //    @Step("Нажатие кнопки SIGN IN")
     public void clickButton() {
         Allure.step("Нажатие кнопки SIGN IN");
         button.perform(click());
     }
 
-    //    @Step("Появление окна с текстом ошибки")
     public void errorMessageText(String text, View decorView) {
         Allure.step("Появление окна с текстом ошибки");
         onView(withText(text))

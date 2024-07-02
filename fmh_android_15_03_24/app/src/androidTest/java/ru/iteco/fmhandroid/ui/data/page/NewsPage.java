@@ -32,13 +32,11 @@ public class NewsPage {
     private final ViewInteraction viewNewsImage = onView(withId(R.id.view_news_item_image_view));
     private final ViewInteraction viewNewsButton = onView(withId(R.id.news_list_recycler_view));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.container_list_news_include, 7000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         titleContainer.check(matches(isDisplayed()));
@@ -55,43 +53,28 @@ public class NewsPage {
         viewNewsButton.check(matches(isDisplayed()));
     }
 
-    //    @Step("Разворачивание/сворачивание карточки новости по заданной позиции")
     public void clickView(int position) {
         Allure.step("Разворачивание/сворачивание карточки новости по заданной позиции");
         viewNewsButton.perform(actionOnItemAtPosition(position, scrollTo()));
         viewNewsButton.perform(actionOnItemAtPosition(position, click()));
     }
 
-    //    @Step("Проверка видимости текста новости после разворачивания блока новости")
-    public void textNewsVisible() {
-        Allure.step("Проверка видимости текста новости после разворачивания блока новости");
-
-//                onData(allOf(withId(R.id.news_list_recycler_view)))
-//                .atPosition(0)
-//                .onChildView((withId(R.id.news_item_title_text_view)))
-//                .check(matches(isDisplayed()));
-    }
-
-    //    @Step("Проверка невидимости текста новости после сворачивания блока новости")
     public void textNewsInvisible() {
         Allure.step("Проверка невидимости текста новости после сворачивания блока новости");
         textNews.check(matches(not(isDisplayed())));
     }
 
-    //    @Step("Открытие фильтра")
     public NewsFilterPage clickFilter() {
         Allure.step("Открытие фильтра");
         filterButton.perform(click());
         return new NewsFilterPage();
     }
 
-    //    @Step("Нажатие на кнопку сортировки")
     public void clickSort() {
         Allure.step("Нажатие на кнопку сортировки");
         sortButton.perform(click());
     }
 
-    //    @Step("Открытие страницы Сontrol Panel")
     public ControlPanelPage clickControlPanel() {
         Allure.step("Открытие страницы Сontrol Panel");
         controlPanelButton.perform(click());

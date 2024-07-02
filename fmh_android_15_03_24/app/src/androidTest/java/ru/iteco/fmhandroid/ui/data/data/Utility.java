@@ -82,11 +82,4 @@ public class Utility {
         };
     }
 
-
-//    @Attachment(value = "Page screenshot")
-//    public static String generateScreenshotName(String testName) {
-//        String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-//        return testName + "_" + timestamp + ".png";
-//    }
-
 }

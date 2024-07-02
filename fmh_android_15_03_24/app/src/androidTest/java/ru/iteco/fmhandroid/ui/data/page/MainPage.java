@@ -33,13 +33,11 @@ public class MainPage {
     private final ViewInteraction viewNewsImage = onView(withId(R.id.view_news_item_image_view));
     private final ViewInteraction viewNewsButton = onView(withId(R.id.news_list_recycler_view));
 
-    //@Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.all_news_text_view, 7000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         title.check(matches(isDisplayed()));
@@ -47,25 +45,21 @@ public class MainPage {
         allNewsButton.check(matches(isDisplayed()));
         allNewsButton.check(matches(withText("ALL NEWS")));
         viewAllNewsButton.check(matches(isDisplayed()));
-        //        cardNews.check(matches(isDisplayed()));
+//        cardNews.check(matches(isDisplayed()));
 //        imageNews.check(matches(isDisplayed()));
 //        dateNews.check(matches(isDisplayed()));
 //        titleNews.check(matches(isDisplayed()));
 //        textNews.check(matches(not(isDisplayed())));
 //        viewNewsImage.check(matches(isDisplayed()));
 //        viewNewsButton.check(matches(isDisplayed()));
-//        allNewsVisible(); //проверить как отработает переиспользование метода
-//     viewNews.perform(actionOnItemAtPosition(0, matches(ViewMatchers.isDisplayed())));
     }
 
-    //    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         allNewsButton.check(matches(isClickable()));
         viewAllNewsButton.check(matches(isClickable()));
     }
 
-    //    @Step("Проверка что часть элементов скрыта элементов на странице")
     public void pageInisible() {
         Allure.step("Проверка что часть элементов скрыта элементов на странице");
         title.check(matches(isDisplayed()));
@@ -74,13 +68,11 @@ public class MainPage {
         allNewsInvisible();
     }
 
-    //    @Step("Разворачивание/сворачивание всех новостей")
     public void clickViewAllNews() {
         Allure.step("Разворачивание/сворачивание всех новостей");
         viewAllNewsButton.perform((click()));
     }
 
-    //    @Step("Проверка видимости раздела All News на странице MainPage")
     public void allNewsVisible() {
         Allure.step("Проверка видимости раздела All News на странице MainPage");
         cardNews.check(matches(isDisplayed()));
@@ -89,10 +81,8 @@ public class MainPage {
         titleNews.check(matches(isDisplayed()));
         textNews.check(matches(not(isDisplayed())));
         viewNewsButton.check(matches(isDisplayed()));
-//        viewNews.perform(actionOnItemAtPosition(0, matches(ViewMatchers.isDisplayed())));
     }
 
-    //    @Step ("Проверка что скрыты все элементы  All News на странице MainPage")
     public void allNewsInvisible() {
         Allure.step("Проверка что скрыты все элементы  All News на странице MainPage");
         cardNews.check(matches(not(isDisplayed())));
@@ -105,7 +95,6 @@ public class MainPage {
 
     }
 
-    //    @Step("Разворачивание карточки новости по заданной позиции")
     public void clickView(int position) {
         Allure.step("Разворачивание карточки новости по заданной позиции");
         cardNews.perform(actionOnItemAtPosition(position, click()));
@@ -113,26 +102,21 @@ public class MainPage {
 
     }
 
-    //    @Step("Проверка колличества карточек новостей")
     public void childCount(int child) {
         Allure.step("Проверка колличества карточек новостей");
         cardNews.check(matches(hasChildCount(child)));
     }
 
-    //    @Step("Проверка видимости текста новости после разворачивания блока новости")
     public void textNewsVisible() {
         Allure.step("Проверка видимости текста новости после разворачивания блока новости");
         textNews.check(matches(isDisplayed()));
     }
 
-
-    //    @Step("Проверка невидимости текста новости после сворачивания блока новости")
     public void textNewsInvisible() {
         Allure.step("Проверка невидимости текста новости после сворачивания блока новости");
         textNews.check(matches(not(isDisplayed())));
     }
 
-    //    @Step("Переход в раздел All news")
     public NewsPage openAllNews() {
         Allure.step("Переход в раздел All news");
         allNewsButton.perform(click());

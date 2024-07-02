@@ -38,13 +38,11 @@ public class ControlPanelCreatePage {
     private final ViewInteraction alertCategory = Espresso.onView(withId(com.google.android.material.R.id.text_input_start_icon));
     private final ViewInteraction alertOther = Espresso.onView(withId(com.google.android.material.R.id.text_input_end_icon));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.custom_app_bar_title_text_view, 7000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         creatingTitle.check(matches(isDisplayed()));
@@ -70,7 +68,6 @@ public class ControlPanelCreatePage {
         cancelButton.check(matches(withText("CANCEL")));
     }
 
-    //    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         categoryBox.check(matches(isClickable()));
@@ -83,7 +80,6 @@ public class ControlPanelCreatePage {
         cancelButton.check(matches(isClickable()));
     }
 
-    //    @Step("Видимости элементов в модальном окне")
     public void cancelWindowVisible() {
         Allure.step("Видимости элементов в модальном окне");
         cancelButtonMessage.check(matches(isDisplayed()));
@@ -94,7 +90,6 @@ public class ControlPanelCreatePage {
         cancelOkButton.check(matches(withText("OK")));
     }
 
-    //    @Step("Создание новости")
     public void createNews() {
         Allure.step("Создание первой новости");
         categoryBox.perform(replaceText(Helper.getCategory(5)));
@@ -105,7 +100,6 @@ public class ControlPanelCreatePage {
         saveButton.perform(click());
     }
 
-    //    @Step("Создание новости")
     public void createNews2() {
         Allure.step("Создание второй новости");
         categoryBox.perform(replaceText(Helper.getCategory(1)));

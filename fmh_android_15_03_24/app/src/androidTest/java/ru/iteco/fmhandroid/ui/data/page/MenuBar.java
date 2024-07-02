@@ -31,13 +31,11 @@ public class MenuBar {
 //    private final ViewInteraction logOut = onView(withId(android.R.id.content));
     private final ViewInteraction logOut = onView(withText("Log out"));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.main_menu_image_button, 5000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         mainMenu.check(matches(isDisplayed()));
@@ -46,7 +44,6 @@ public class MenuBar {
         profileButton.check(matches(isDisplayed()));
     }
 
-    //    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         mainMenu.check(matches(isClickable()));
@@ -54,13 +51,11 @@ public class MenuBar {
         profileButton.check(matches(isClickable()));
     }
 
-    //    @Step("Открытие главного меню")
     public void openMenu() {
         Allure.step("Открытие главного меню");
         mainMenu.perform(click());
     }
 
-    //    @Step("Проверка видимости главного меню")
     public void mainMenuVisible() {
         Allure.step("Проверка видимости главного меню");
         mainButton.check(matches(isDisplayed()));
@@ -68,7 +63,6 @@ public class MenuBar {
         aboutButton.check(matches(isDisplayed()));
     }
 
-    //    @Step("Открытие страницы Main")
     public MainPage openMainPage() {
         Allure.step("Открытие страницы Main");
         mainMenu.perform(click());
@@ -76,7 +70,6 @@ public class MenuBar {
         return new MainPage();
     }
 
-    //    @Step("Открытие страницы News")
     public NewsPage openNewsPage() {
         Allure.step("Открытие страницы News");
         waitingPageLoad();
@@ -85,7 +78,6 @@ public class MenuBar {
         return new NewsPage();
     }
 
-    //    @Step("Отркытие страницы About")
     public AboutPage openAboutPage() {
         Allure.step("Отркытие страницы About");
         waitingPageLoad();
@@ -94,7 +86,6 @@ public class MenuBar {
         return new AboutPage();
     }
 
-    //    @Step("Открытие страницы Our Mission")
     public OurMissionPage openOurMission() {
         Allure.step("Открытие страницы Our Mission");
         waitingPageLoad();
@@ -103,21 +94,18 @@ public class MenuBar {
         return new OurMissionPage();
     }
 
-    //    @Step("Открытие меню профиля")
     public void openProfileMenu() {
         Allure.step("Открытие меню профиля");
         profileButton.perform(click());
 
     }
 
-    //    @Step("Проверка видимости меню профиля")
     public void profileMenuVisible() {
         Allure.step("Проверка видимости меню профиля");
         logOut.check(matches(isDisplayed()));
         logOut.check(matches(ViewMatchers.withText("Log out")));
     }
 
-    //    @Step("Выход из профиля")
     public AuthorizationPage exitProfile() {
         Allure.step("Выход из профиля");
         waitingPageLoad();

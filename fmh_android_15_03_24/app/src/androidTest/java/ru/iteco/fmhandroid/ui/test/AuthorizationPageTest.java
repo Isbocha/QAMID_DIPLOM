@@ -71,7 +71,6 @@ public class AuthorizationPageTest {
         menuBar.pageVisible();
     }
 
-
     @Epic("Негативный")
     @Description("Авторизация с валидным но неверным логином и валидным паролем")
     @Test
@@ -82,7 +81,6 @@ public class AuthorizationPageTest {
         authPage.errorMessageText("Something went wrong. Try again later.", decorView);
     }
 
-
     @Epic("Негативный")
     @Description("Авторизация с валидным логином и валидным но неверным паролем ")
     @Test
@@ -92,7 +90,6 @@ public class AuthorizationPageTest {
         authPage.clickButton();
         authPage.errorMessageText("Something went wrong. Try again later.", decorView);
     }
-
 
     @Epic("Негативный")
     @Description("Авторизация с пустыми полями логина и пароля")
@@ -132,7 +129,6 @@ public class AuthorizationPageTest {
         authPage.clickButton();
         authPage.errorMessageText("Login and password cannot be empty", decorView);
     }
-
 
     @Epic("Негативный")
     @Description("Авторизация с пробелом в начале валидного логина и валидным паролем")

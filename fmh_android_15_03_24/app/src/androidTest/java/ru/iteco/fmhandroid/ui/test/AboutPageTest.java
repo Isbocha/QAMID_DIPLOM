@@ -41,10 +41,8 @@ public class AboutPageTest {
     public void setUp() {
         try {
             menuBar.openAboutPage();
-//            aboutPage.waitingPageLoad();
         } catch (Exception e) {
             authPage.authUser();
-//            authPage.waitingPageLoad();
             menuBar.openAboutPage();
             aboutPage.waitingPageLoad();
         }

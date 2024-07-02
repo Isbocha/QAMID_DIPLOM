@@ -32,13 +32,11 @@ public class NewsFilterPage {
     private final ViewInteraction errorMessage = onView(withId(android.R.id.message));
     private final ViewInteraction errorMessageOkButton = onView(withId(android.R.id.button1));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.filter_news_title_text_view, 7000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         title.check(matches(isDisplayed()));
@@ -56,37 +54,31 @@ public class NewsFilterPage {
         cancelButtonFilter.check(matches(withText("CANCEL")));
     }
 
-    //    @Step("Ввод категории")
     public void addCategory(String data) {
         Allure.step("Ввод категории");
         category.perform(replaceText(data));
     }
 
-    //    @Step("Ввод даты начала")
     public void addStartDate(String value) {
         Allure.step("Ввод даты начала");
         startDate.perform(replaceText(value), closeSoftKeyboard());
     }
 
-    //    @Step("Ввод даты окончания")
     public void addEndDate(String value) {
         Allure.step("Ввод даты окончания");
         endDate.perform(replaceText(value), closeSoftKeyboard());
     }
 
-    //    @Step("Нажатие на кнопку FILTER")
     public void clickFilter() {
         Allure.step("Нажатие на кнопку FILTER");
         filterButton.perform(click());
     }
 
-    //    @Step("Нажатие на кнопку CANCEL")
     public void clickCancel() {
         Allure.step("Нажатие на кнопку CANCEL");
         cancelButtonFilter.perform(click());
     }
 
-    //    @Step("Проверка видимости страницы без новостей")
     public void emptyNewsVisible() {
         Allure.step("Проверка видимости страницы без новостей");
         emptyNewsImage.check(matches(isDisplayed()));
@@ -96,13 +88,11 @@ public class NewsFilterPage {
         refreshButton.check(matches(withText("REFRESH")));
     }
 
-    //    @Step("Нажатие на кнопку REFRESH")
     public void clickRefresh() {
         Allure.step("Нажатие на кнопку REFRESH");
         refreshButton.perform(click());
     }
 
-    //    @Step("Проверка видимости модального окна с текстом ошибки")
     public void errorVisible() {
         Allure.step("Проверка видимости модального окна с текстом ошибки");
         errorMessage.check(matches(isDisplayed()));
@@ -111,7 +101,6 @@ public class NewsFilterPage {
         errorMessageOkButton.check(matches(withText("OK")));
     }
 
-    //    @Step("Закрытие модального окна с текстом ошибки")
     public void clickErrorMessageOkButton() {
         Allure.step("Закрытие модального окна с текстом ошибки");
         errorMessageOkButton.perform(click());

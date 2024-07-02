@@ -27,13 +27,11 @@ public class AboutPage {
     private final ViewInteraction infoLabel = onView(withId(R.id.about_company_info_label_text_view));
     private final ViewInteraction backButton = onView(withId(R.id.about_back_image_button));
 
-//    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.about_version_title_text_view, 7000));
     }
 
-//    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         titleVersion.check(ViewAssertions.matches(isDisplayed()));
@@ -47,11 +45,9 @@ public class AboutPage {
         termsOfUse.check(matches(ViewMatchers.withText("Terms of use:")));
         termsOfUseLinc.check(ViewAssertions.matches(isDisplayed()));
         infoLabel.check(ViewAssertions.matches(isDisplayed()));
-//        infoLabel.check(matches(ViewMatchers.withText("� I-Teco, 2022")));
         backButton.check(ViewAssertions.matches(isDisplayed()));
     }
 
-//    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         privacyPolicyLinc.check(ViewAssertions.matches(isClickable()));
@@ -59,23 +55,19 @@ public class AboutPage {
         backButton.check(ViewAssertions.matches(isClickable()));
     }
 
-//    @Step("Возвращение на предыдущую страницу")
     public void clickBackButton() {
         Allure.step("Возвращение на предыдущую страницу");
         backButton.perform(click());
     }
 
-//    @Step("Переход по ссылке Privacy Policy")
     public void clickPrivacyPolicyLinc() {
         Allure.step("Переход по ссылке Privacy Policy");
         privacyPolicyLinc.perform(click());
     }
 
-//    @Step("Переход по ссылке Terms of use")
     public void clickTermsOfUseLinc() {
         Allure.step("Переход по ссылке Terms of use");
         termsOfUseLinc.perform(click());
     }
-
 
 }

@@ -39,7 +39,6 @@ public class ControlPanelPage {
     private final ViewInteraction statusImage = onView(withId(R.id.news_item_published_icon_image_view));
     private final ViewInteraction statusValue = onView(withId(R.id.news_item_published_text_view));
     private final ViewInteraction deleteButton = onView(
-
             Utility.childAtPosition(
                     withId(R.id.news_item_material_card_view),
                     0));
@@ -56,14 +55,11 @@ public class ControlPanelPage {
     private final ViewInteraction titleNews = onView(withId(R.id.news_item_title_text_view));
     private final ViewInteraction textNews = onView(withId(R.id.news_item_description_text_view));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.sort_news_material_button, 7000));
     }
 
-
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         title.check(matches(isDisplayed()));
@@ -90,7 +86,6 @@ public class ControlPanelPage {
 //        viewImageButton.check(matches(isDisplayed()));
     }
 
-    //    @Step("Проверка кликабельности элементов на странице")
     public void pageClickable() {
         Allure.step("Проверка кликабельности элементов на странице");
         sortButton.check(matches(isClickable()));
@@ -98,30 +93,16 @@ public class ControlPanelPage {
         createButton.check(matches(isClickable()));
     }
 
-    //    @Step("Пролистать до заданной позиции")
     public void scroll(int position) {
         Allure.step("Пролистать до заданной позиции");
         viewButton.perform(actionOnItemAtPosition(position, scrollTo()));
     }
 
-    //    @Step("Разворачивание карточки новости по заданной позиции")
     public void clickView(int position) {
         Allure.step("Разворачивание карточки новости по заданной позиции");
         viewButton.perform(actionOnItemAtPosition(position, click()));
     }
 
-//    @Step("Проверка элементов у заданной позиции")
-//    public void clickVie() {
-//        Allure.step("Проверка элементов у заданной позиции");
-//        ViewInteraction textView = onView(
-//                allOf(withId(R.id.news_item_title_text_view),
-//                        withParent(withParent(withId(R.id.news_item_material_card_view))),
-//                        isCompletelyDisplayed()));
-//        textView.check(matches(isDisplayed()));
-//    }
-
-
-    //    @Step("Видимость заголовка новости на странице")
     public void titleNewsVisible(String title) {
         Allure.step("Видимость заголовка новости на странице");
         ViewInteraction textView2 = onView(
@@ -131,58 +112,49 @@ public class ControlPanelPage {
         textView2.check(matches(withText(title)));
     }
 
-    //    @Step("Видимость текста  после разворачивания карточки новости")
     public void textNewsVisible() {
         Allure.step("Видимость текста  после разворачивания карточки новости");
         textNews.check(matches(isDisplayed()));
     }
 
-    //    @Step("Невидимость текста после сворачивания карточки новости")
     public void textNewsInvisible() {
         Allure.step("Невидимость текста после сворачивания карточки новости");
         textNews.check(matches(not(isDisplayed())));
     }
 
-    //    @Step("Нажатие на кнопку сортировки")
     public void clickSort() {
         Allure.step("Нажатие на кнопку сортировки");
         sortButton.perform(click());
     }
 
-    //    @Step("Открытие фильтра")
     public ControlPanelFilterPage clickFilter() {
         Allure.step("Открытие фильтра");
         filterButton.perform(click());
         return new ControlPanelFilterPage();
     }
 
-    //    @Step("Открытие страницы создания новости")
     public ControlPanelCreatePage clickCreate() {
         Allure.step("Открытие страницы создания новости");
         createButton.perform(click());
         return new ControlPanelCreatePage();
     }
 
-    //    @Step("Нажатие на кнопку удалить по заданной позиции")
     public void clickDelete(int position) {
         Allure.step("Нажатие на кнопку удалить по заданной позиции");
         deleteButton.perform(actionOnItemAtPosition(position, click()));
     }
 
-    //    @Step("Открытие страницы редактирования новости")
     public ControlPanelEditPage clickEdit() {
         Allure.step("Открытие страницы редактирования новости");
         editButton.perform(click());
         return new ControlPanelEditPage();
     }
 
-    //    @Step("Развернуть выбранную новость")
     public void checkViewNews(int index) {
         Allure.step("Развернуть выбранную новость");
         viewButton.perform(actionOnItemAtPosition(index, click()));
     }
 
-    //    @Step("Проверка видимости описания новости")
     public void textVisible(String text) {
         Allure.step("Проверка видимости описания новости");
         ViewInteraction textView = onView(
@@ -191,7 +163,6 @@ public class ControlPanelPage {
                         isDisplayed()));
     }
 
-    //    @Step("Проверка видимости окна удалить")
     public void deleteWindowVisible() {
         Allure.step("Проверка видимости окна удалить");
 //        deleteMessage.check(matches(isDisplayed()));
@@ -202,13 +173,11 @@ public class ControlPanelPage {
         deleteOkButton.check(matches(withText("OK")));
     }
 
-    //    @Step("Нажатие на кнопку CANCEL")
     public void clickCancel() {
         Allure.step("Нажатие на кнопку CANCEL");
         deleteCancelButton.perform(click());
     }
 
-    //    @Step("Нажатие на кнопку OK")
     public void clickОк() {
         Allure.step("Нажатие на кнопку OK");
         deleteOkButton.perform(click());

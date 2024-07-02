@@ -36,7 +36,6 @@ public class OurMissionPage {
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.our_mission_title_text_view, 7000));
     }
 
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
         title.check(matches(isDisplayed()));
@@ -48,20 +47,17 @@ public class OurMissionPage {
 //        itemTextCard.check(matches(not(isDisplayed())));
     }
 
-    //    @Step("Разворачивание/сворачивание карточки с цитатой по заданной позиции")
     public void clickView(int position) {
         Allure.step("Разворачивание/сворачивание карточки с цитатой по заданной позиции");
         materialCard.perform(actionOnItemAtPosition(position, click()));
     }
 
-    //    @Step("Проверка видимости текста после разворачивания карточки с цитатой")
     public void textCardVisible(String text) {
         Allure.step("Проверка видимости текста после разворачивания карточки с цитатой");
         itemTextCard.check(matches(withText(text)));
         itemTextCard.check(matches(isDisplayed()));
     }
 
-    //    @Step("Проверка невидимости текста  после сворачивания  карточки с цитатой")
     public void textCardInvisible() {
         Allure.step("Проверка невидимости текста  после сворачивания  карточки с цитатой");
         itemTextCard.check(matches(not(isDisplayed())));

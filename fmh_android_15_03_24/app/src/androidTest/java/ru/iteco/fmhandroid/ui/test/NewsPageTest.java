@@ -80,8 +80,7 @@ public class NewsPageTest {
     @Description("Разворачивание первой 1 и 7 новости")
     public void shouldViewFirstNews() {
         newsPage.clickView(0);
-        newsPage.textNewsVisible();
-//        newsPage.clickView(6);
+        newsPage.clickView(6);
     }
 
 }

@@ -32,19 +32,15 @@ public class ControlPanelEditPage {
     private final ViewInteraction switcher = onView(withId(R.id.switcher));
     private final ViewInteraction saveButton = onView(withId(R.id.save_button));
     private final ViewInteraction cancelButton = onView(withId(R.id.cancel_button));
-
     private final ViewInteraction cancelButtonMessage = onView(withId(android.R.id.message));
     private final ViewInteraction cancelCancelButton = onView(withId(android.R.id.button2));
     private final ViewInteraction cancelOkButton = onView(withId(android.R.id.button1));
 
-    //    @Step("Ожидание загрузки страницы")
     public void waitingPageLoad() {
         Allure.step("Ожидание загрузки страницы");
         onView(isRoot()).perform(Utility.waitDisplayed(R.id.custom_app_bar_title_text_view, 7000));
     }
 
-
-    //    @Step("Проверка видимости элементов на странице")
     public void pageVisible() {
         Allure.step("Проверка видимости элементов на странице");
 //        editingTitle.check(matches(isDisplayed()));
@@ -68,13 +64,11 @@ public class ControlPanelEditPage {
 //        cancelButton.check(matches(withText("CANCEL")));
     }
 
-    //   @Step("Закрытие окна редактирования новости")
     public void clickCancelButton() {
         Allure.step("Закрытие окна редактирования новости");
         cancelButton.perform(click());
     }
 
-    //   @Step("Проверка видимости элементов модального окна")
     public void cancelWindowVisible() {
         Allure.step("Проверка видимости элементов модального окна");
         cancelButtonMessage.check(matches(isDisplayed()));
@@ -85,13 +79,11 @@ public class ControlPanelEditPage {
         cancelOkButton.check(matches(withText("OK")));
     }
 
-    //    @Step("Закрытие окна редактирования новости")
     public void exit() {
         Allure.step("Закрытие окна редактирования новости");
         cancelOkButton.perform(click());
     }
 
-    //    @Step ("Продолжить редактирование")
     public void continueEditing() {
         Allure.step("Продолжить редактирование");
         cancelCancelButton.perform(click());
@@ -100,8 +92,5 @@ public class ControlPanelEditPage {
     public void editCategory(String data) {
         Allure.step("Изменение категории");
         categoryValue.perform(replaceText(data));
-        ;
     }
-
-
 }
